@@ -728,7 +728,7 @@ export default function PosWorkspace({
                 id="payment-dialog-title"
                 className="font-display text-2xl font-extrabold uppercase leading-none"
               >
-                Pembayaran Pesanan
+                {paymentMethod === "cash" ? "Pembayaran Tunai" : "Pembayaran QRIS"}
               </h2>
               <button
                 type="button"
@@ -757,40 +757,6 @@ export default function PosWorkspace({
                   </span>
                 </div>
               </div>
-
-              {/* Payment Method Selector */}
-              <fieldset>
-                <legend className="block text-sm font-bold text-[#143656] mb-2">
-                  Metode Pembayaran
-                </legend>
-                <div className="grid grid-cols-2 gap-3">
-                  <button
-                    type="button"
-                    onClick={() => setPaymentMethod("cash")}
-                    aria-pressed={paymentMethod === "cash"}
-                    className={`min-h-[48px] px-4 py-2.5 rounded border-2 font-bold text-sm transition-colors ${
-                      paymentMethod === "cash"
-                        ? "bg-[#143656] text-white border-[#143656] shadow-[2px_2px_0_#0E2740]"
-                        : "bg-white text-[#143656] border-[#143656] hover:bg-[#EAE0C8]"
-                    }`}
-                  >
-                    Tunai (Cash)
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setPaymentMethod("qris")}
-                    aria-pressed={paymentMethod === "qris"}
-                    className={`min-h-[48px] px-4 py-2.5 rounded border-2 font-bold text-sm transition-colors ${
-                      paymentMethod === "qris"
-                        ? "bg-[#143656] text-white border-[#143656] shadow-[2px_2px_0_#0E2740]"
-                        : "bg-white text-[#143656] border-[#143656] hover:bg-[#EAE0C8]"
-                    }`}
-                  >
-                    QRIS
-                  </button>
-                </div>
-              </fieldset>
 
               {/* CASH flow */}
               {paymentMethod === "cash" && (
@@ -877,7 +843,7 @@ export default function PosWorkspace({
                   onClick={() => setPaymentModalOpen(false)}
                   className="btn-secondary"
                 >
-                  Kembali ke Slip
+                  Kembali
                 </button>
                 <button
                   type="submit"
