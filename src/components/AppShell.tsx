@@ -20,7 +20,7 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { href: "/pos", label: "Kasir POS", group: "counter", matchPrefix: ["/pos", "/payment"] },
+  { href: "/pos", label: "Order Baru", group: "counter", matchPrefix: ["/pos", "/payment"] },
   { href: "/orders/pending", label: "Order Pending", group: "counter" },
   { href: "/orders/completed", label: "Order Selesai", group: "counter" },
   { href: "/dashboard", label: "Ringkasan", group: "manage" },
@@ -205,7 +205,7 @@ export default function AppShell({
                       key={item.href}
                       href={item.href}
                       aria-current={active ? "page" : undefined}
-                      className={`inline-flex items-center justify-center min-h-[40px] px-3.5 py-1.5 rounded-sm text-sm font-bold transition-colors ${
+                      className={`inline-flex items-center justify-center whitespace-nowrap min-h-[40px] px-3.5 py-1.5 rounded-sm text-sm font-bold transition-colors ${
                         active
                           ? "bg-[#B3281B] text-white shadow-[2px_2px_0_#081726]"
                           : "text-[#FAF5EA] hover:bg-[#1C466E]"
@@ -232,7 +232,7 @@ export default function AppShell({
                       key={item.href}
                       href={item.href}
                       aria-current={active ? "page" : undefined}
-                      className={`inline-flex items-center justify-center min-h-[40px] px-3 py-1.5 rounded-sm text-sm font-semibold border-b-2 transition-colors ${
+                      className={`inline-flex items-center justify-center whitespace-nowrap min-h-[40px] px-3 py-1.5 rounded-sm text-sm font-semibold border-b-2 transition-colors ${
                         active
                           ? "border-[#FAF5EA] bg-[#1C466E] text-white font-bold"
                           : "border-transparent text-[#F3EAD8]/90 hover:text-white hover:bg-[#0E2740]"

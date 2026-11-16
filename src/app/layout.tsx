@@ -24,12 +24,17 @@ const fontMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Liminal Campervan Bar - POS Kasir",
-    template: "%s | Liminal Campervan Bar",
-  },
-  description: "Sistem Point of Sale (POS) Liminal Campervan Bar.",
+  title: "Liminal Campervan Bar",
+  description: "Liminal Campervan Bar - Coffee. Culture. Street.",
   manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/icon-192.png",
+    apple: "/icon-192.png",
+  },
 };
 
 export const viewport: Viewport = {
